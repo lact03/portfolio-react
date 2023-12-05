@@ -34,7 +34,13 @@ const Contact = () => {
       From: import.meta.env.VITE_SMTPJS_EMAILFROM,
       Subject: form.subject,
       Body: body,
-    }).then((message) => alert(message));
+    })
+      .then((message) => alert(message))
+      .catch((error) => {
+        // Handle the error
+        console.error("Error sending email:", error);
+        alert("Error sending email. Please try again later.");
+      });
   }
 
   // console.log(import.meta.env.VITE_SMTPJS_USERNAME);
