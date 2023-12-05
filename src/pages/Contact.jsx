@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
+  console.log("hello world");
+  console.log(import.meta.env.VITE_SMTPJS_EMAILFROM);
   const [form, setForm] = useState({
     name: "",
     email: "",
