@@ -11,13 +11,13 @@ const Footer = () => {
         <Link to="mailto:luistabug03@gmail.com">
           <img className="email-svg " src={emailIcon} alt="email" />
         </Link>
-        <Link to="" target="_blank">
+        <Link to="https://www.linkedin.com/in/luistabug/" target="_blank">
           <img className="linkedin-svg " src={linkedinIcon} alt="linkedin" />
         </Link>
-        <Link to="" target="_blank">
+        <Link to="https://github.com/lact03" target="_blank">
           <img className="github-svg " src={githubIcon} alt="" />
         </Link>
-        <Link>
+        <Link to="https://www.facebook.com/LuisTabug03" target="_blank">
           <img className="facebook-svg " src={facebookIcon} alt="" />
         </Link>
       </div>
