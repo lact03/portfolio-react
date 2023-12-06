@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:wght@300;400&display=swap");
 
 :root {
-  --first-color: #f6f1f1;
-  --second-color: #afd3e2;
-  --third-color: #19a7ce;
-  --fourth-color: #146c94;
+  --first-color: #fff5e4;
+  --second-color: #ffe3e1;
+  --third-color: #ffd1d1;
+  --fourth-color: #ff9494;
 }
 
 * {
@@ -17,13 +17,17 @@
 html {
   font-size: 12px;
 }
+body {
+  background: var(--first-color);
+}
 
 /* Navbar */
 #navbar {
-  height: 40px;
+  height: 45px;
   width: 100%;
-  background: transparent;
+  background: var(--third-color);
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
 }
@@ -31,6 +35,17 @@ html {
   display: flex;
   justify-content: space-between;
   height: 100%;
+}
+.logo-container {
+  align-self: center;
+  height: 90%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.logo-container img {
+  height: 100%;
+  width: 100%;
 }
 .navbar-content ul {
   display: flex;
@@ -82,7 +97,7 @@ html {
   height: 40px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: pink;
+  background: var(--fourth-color);
   opacity: 0;
   transition: all 600ms;
 }
@@ -166,6 +181,7 @@ html {
   font-size: 1.5rem;
   line-height: 2rem;
   padding: 5px;
+  margin-bottom: 1rem;
 }
 
 /* HOMEPAGE - About Section */
@@ -179,6 +195,7 @@ html {
   font-size: 1.5rem;
   font-weight: lighter;
   text-align: justify;
+  margin-bottom: 1rem;
 }
 
 /* HOMEPAGE - Projects Section */
@@ -189,6 +206,7 @@ html {
 .projects-content {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 .project {
   width: 50%;
@@ -199,8 +217,8 @@ html {
   aspect-ratio: 4 / 3;
   padding: 1rem;
   display: block;
-  background: pink;
-  border: 1px solid pink;
+  background: var(--third-color);
+  border: 1px solid var(--third-color);
   border-radius: 1rem;
 }
 .project img {
@@ -212,6 +230,11 @@ html {
 .project-info {
   font-size: 2rem;
   padding-top: 2rem;
+}
+.project-info a {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: black;
 }
 .project-info p {
   font-weight: lighter;
@@ -326,9 +349,11 @@ html {
   width: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 .contact-form-container div {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -357,6 +382,37 @@ html {
   font-family: "Pixelify Sans";
 }
 
+span.button-container {
+  display: flex;
+  justify-content: center;
+}
+a.button {
+  cursor: pointer;
+  color: orange;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  transition: all 1s ease-in;
+}
+a.button svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+a.button rect {
+  fill: none;
+  stroke: orange;
+  stroke-width: 5;
+  stroke-dasharray: 450, 0;
+  transition: all 0.5s linear;
+}
+
 .container {
   max-width: 1024px;
   margin-left: auto;
@@ -368,6 +424,19 @@ html {
 
 .d-none {
   display: none;
+}
+
+@media (min-width: 769px) {
+  a.button:hover {
+    color: black;
+  }
+  a.button:hover rect {
+    stroke: black;
+    stroke-width: 5;
+    stroke-dasharray: 20, 300;
+    stroke-dashoffset: 48;
+    transition: all 2s cubic-bezier(0.22, 1, 0.25, 1);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -413,6 +482,23 @@ html {
   }
   .contact-form-container form input {
     width: 100%;
+  }
+
+  a.button {
+    transition: all 100ms;
+  }
+  a.button:active {
+    color: black;
+  }
+  a.button rect {
+    transition: all 100ms;
+  }
+  a.button:active rect {
+    stroke: black;
+    /* stroke-width: 5;
+    stroke-dasharray: 20, 300;
+    stroke-dashoffset: 48;
+    transition: all 2s cubic-bezier(0.22, 1, 0.25, 1); */
   }
 }
 

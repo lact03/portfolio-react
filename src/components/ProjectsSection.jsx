@@ -4,6 +4,7 @@ import easeSofa from "../assets/Simply_Ease_Sofa_Preview_2.jpg";
 import Project from "./Project";
 import { useContext } from "react";
 import { ProjectContext } from "../contexts/ProjectProvider";
+import LinkButton from "./LinkButton";
 
 const ProjectsSection = () => {
   const { projects } = useContext(ProjectContext);
@@ -27,7 +28,7 @@ const ProjectsSection = () => {
             info={projects[1].info}
           />
         </div>
-        <Link to="/projects">More Projects</Link>
+        <LinkButton buttonName="More Projects" href="/projects" />
       </div>
     </div>
   );

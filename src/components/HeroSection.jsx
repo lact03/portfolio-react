@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import profile from "../assets/portfolio_profile.jpg";
+import LinkButton from "./LinkButton";
 
 const HeroSection = () => {
   return (
@@ -16,7 +17,7 @@ const HeroSection = () => {
           With a passion for innovation and problem solving, <br />
           I'm able to find solutions to intricate problems.
         </h4>
-        <Link>Contact me!</Link>
+        <LinkButton buttonName="Contact Me!" href="/contact" />
       </div>
     </div>
   );

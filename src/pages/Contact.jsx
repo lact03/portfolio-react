@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import LinkButton from "../components/LinkButton";
 
 const Contact = () => {
-  console.log("hello world");
-  console.log(import.meta.env.VITE_SMTPJS_EMAILFROM);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,36 +22,45 @@ const Contact = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log("the button is clicked");
 
     const body = `Full Name: ${form.name}<br />Email Address: ${form.email}<br />Phone Number: ${form.number}<br />Message: ${form.message}`;
 
-    Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: import.meta.env.VITE_SMTPJS_USERNAME,
-      Password: import.meta.env.VITE_SMTPJS_PASSWORD,
-      To: import.meta.env.VITE_SMTPJS_EMAILTO,
-      From: import.meta.env.VITE_SMTPJS_EMAILFROM,
-      Subject: form.subject,
-      Body: body,
-    })
-      .then((message) => alert(message))
-      .catch((error) => {
-        // Handle the error
-        console.error("Error sending email:", error);
-        alert("Error sending email. Please try again later.");
-      });
+    if (!form.name || !form.email || !form.number || !form.message) {
+      alert("Please fill all fields.");
+    } else {
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: import.meta.env.VITE_SMTPJS_USERNAME,
+        Password: import.meta.env.VITE_SMTPJS_PASSWORD,
+        To: import.meta.env.VITE_SMTPJS_EMAILTO,
+        From: import.meta.env.VITE_SMTPJS_EMAILFROM,
+        Subject: form.subject,
+        Body: body,
+      })
+        .then((message) => alert(message))
+        .catch((error) => {
+          // Handle the error
+          console.error("Error sending email:", error);
+          alert("Error sending email. Please try again later.");
+        });
+
+      setForm({ name: "", email: "", number: "", subject: "", message: "" });
+    }
   }
 
   // console.log(import.meta.env.VITE_SMTPJS_USERNAME);
   // console.log(import.meta.env.VITE_SMTPJS_PASSWORD);
   // console.log(import.meta.env.VITE_SMTPJS_EMAILTO);
+  // console.log("hello world");
+  // console.log(import.meta.env.VITE_SMTPJS_EMAILFROM);
 
   return (
     <div id="contact-page">
       <div className="container">
         <div className="contact-form-container">
           <h1 className="pixelify-sans">LEAVE A MESSAGE!</h1>
-          <form action="#" onSubmit={handleSubmit}>
+          <form action="#">
             <div>
               <input
                 className="input"
@@ -99,7 +107,18 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
             ></textarea>
-            <button type="submit">Send message</button>
+            <button
+              type="submit"
+              style={{
+                border: "none",
+                width: "200px",
+                height: "40px",
+                background: "transparent",
+              }}
+              onClick={handleSubmit}
+            >
+              <LinkButton buttonName="Send message" />
+            </button>
           </form>
         </div>
       </div>

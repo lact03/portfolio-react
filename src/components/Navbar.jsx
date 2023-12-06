@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import logo from "../assets/Logo.jpg";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
     <nav id="navbar" className={isNavOpen ? "open" : "close"}>
       <div className="navbar-content container ">
         <Link to="/" className="logo-container">
-          <img src="" alt="logo" />
+          <img src={logo} alt="logo" />
         </Link>
         <ul>
           <li>

@@ -15,6 +15,7 @@ const Projects = () => {
         <div className="projects-content">
           {projects.map((project) => (
             <Project
+              key={project.id}
               title={project.title}
               link={project.link}
               img={project.img}
@@ -22,13 +23,6 @@ const Projects = () => {
               info={project.info}
             />
           ))}
-          {/* <Project
-            title={projects[0].title}
-            link={projects[0].link}
-            img={projects[0].img}
-            alt={projects[0].alt}
-            info={projects[0].info}
-          /> */}
         </div>
       </div>
     </div>
