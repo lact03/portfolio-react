@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LinkButton from "../components/LinkButton";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -57,6 +58,7 @@ const Contact = () => {
 
   return (
     <div id="contact-page">
+      <ScrollToTop />
       <div className="container">
         <div className="contact-form-container">
           <h1 className="pixelify-sans">LEAVE A MESSAGE!</h1>

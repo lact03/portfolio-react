@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Project from "../components/Project";
 import { ProjectContext } from "../contexts/ProjectProvider";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Projects = () => {
   const { projects } = useContext(ProjectContext);
@@ -10,6 +11,7 @@ const Projects = () => {
 
   return (
     <div id="projects-page">
+      <ScrollToTop />
       <div className="container">
         <h1 className="pixelify-sans">PROJECTS</h1>
         <div className="projects-content">

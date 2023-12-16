@@ -1,9 +1,11 @@
 import AboutMeInfo from "../components/AboutMeInfo";
 import profile from "../assets/portfolio_profile.jpg";
+import ScrollToTop from "../components/ScrollToTop";
 
 const About = () => {
   return (
     <div id="about-page">
+      <ScrollToTop />
       <div className="container">
         <h1 className="name pixelify-sans">Luis Tabug</h1>
         <h2 className="role pixelify-sans">Full-Stack Web Developer</h2>
