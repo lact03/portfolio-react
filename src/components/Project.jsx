@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Project = ({ img, alt, title, info, link }) => {
+const Project = ({ img, logo, alt, title, info, link }) => {
   return (
     <div className="project">
-      <Link to={link} target="_blank" className="img-container">
-        <img src={img} alt={alt} />
+      <Link to={link} target="_blank" className="image-container">
+        <img className="project-logo" src={logo} alt="logo" />
+        <img className="project-preview" src={img} alt={alt} />
       </Link>
       <div className="project-info">
         <Link to={link} target="_blank">

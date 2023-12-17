@@ -18,12 +18,14 @@ const ProjectsSection = () => {
           <Project
             title={projects[0].title}
             img={projects[0].img}
+            logo={projects[0].logo}
             alt={projects[0].alt}
             info={projects[0].info}
           />
           <Project
             title={projects[1].title}
             img={projects[1].img}
+            logo={projects[1].logo}
             alt={projects[1].alt}
             info={projects[1].info}
           />
