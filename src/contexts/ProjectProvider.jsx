@@ -36,12 +36,12 @@ const ProjectProvider = ({ children }) => {
     },
     {
       id: 3,
-      title: "Music Player",
+      title: "LudoBeat",
       link: "https://lact03.github.io/music_player/",
       img: ludoBeatPreview,
       logo: ludoBeatLogo,
-      alt: "Music Player",
-      info: `Music Harmony Player is a dynamic music player designed to elevate your listening experience. This project seamlessly integrates with the RapidAPI platform, pulling in real-time data such as lyrics, artist information, albums, and related artists.`,
+      alt: "LudoBeat",
+      info: `LudoBeat is a dynamic music player designed to elevate your listening experience. This project seamlessly integrates with the RapidAPI platform, pulling in real-time data such as lyrics, artist information, albums, and related artists.`,
     },
     {
       id: 4,
